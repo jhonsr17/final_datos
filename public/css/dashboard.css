@@ -1,0 +1,189 @@
+/* Dashboard Newsfeed - gamer neon */
+.dashboard-newsfeed {
+	--violet: #8A2BE2;
+	--cyan: #00E5FF;
+	--bg0: #0d0f14;
+	--bg1: #0f1117;
+	--border: rgba(255,255,255,.10);
+	background:
+		radial-gradient(1200px 600px at 0% 0%, rgba(138,43,226,.16), transparent 60%),
+		radial-gradient(900px 500px at 100% 20%, rgba(0,229,255,.16), transparent 60%),
+		linear-gradient(180deg, var(--bg1), var(--bg0));
+	border: 1px solid var(--border);
+	border-radius: 16px;
+	box-shadow: 0 24px 60px rgba(0,0,0,.45);
+}
+.dnf-layout {
+	display: grid;
+	grid-template-columns: 220px 1fr;
+	gap: 16px;
+}
+@media (max-width: 991.98px) {
+	.dnf-layout { grid-template-columns: 1fr; }
+}
+.dnf-sidebar {
+	position: sticky;
+	top: 12px;
+	height: fit-content;
+	background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+	border: 1px solid var(--border);
+	border-radius: 14px;
+	padding: 10px;
+	box-shadow: 0 0 0 1px rgba(255,255,255,.06) inset, 0 16px 36px rgba(0,0,0,.35);
+}
+.dnf-sideitem {
+	display: grid;
+	grid-template-columns: 24px 1fr;
+	align-items: center;
+	gap: 10px;
+	color: #cfe1ff;
+	padding: 10px;
+	border-radius: 10px;
+	transition: .25s;
+}
+.dnf-sideitem:hover {
+	background: rgba(255,255,255,.06);
+	color: #fff;
+	box-shadow: 0 0 0 1px rgba(138,43,226,.35) inset, 0 8px 18px rgba(0,229,255,.15);
+}
+.dnf-icon {
+	width: 24px; height: 24px; border-radius: 6px;
+	background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+	border: 1px solid rgba(255,255,255,.12);
+	display: grid; place-items: center;
+	font-size: 13px;
+}
+.dnf-content {
+	background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+	border: 1px solid var(--border);
+	border-radius: 14px;
+	padding: 16px;
+}
+.dnf-title {
+	color: #e7ebff;
+	text-shadow: 0 0 18px rgba(138,43,226,.25), 0 0 10px rgba(0,229,255,.2);
+}
+.dnf-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 16px;
+}
+.dnf-card {
+	position: relative;
+	border: 1px solid rgba(255,255,255,.12);
+	border-radius: 14px;
+	overflow: hidden;
+	background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+	box-shadow: 0 16px 36px rgba(0,0,0,.35);
+	transition: transform .2s ease, box-shadow .3s ease;
+}
+.dnf-card::before {
+	content: '';
+	position: absolute;
+	inset: -1px;
+	border-radius: 16px;
+	background: linear-gradient(90deg, rgba(138,43,226,.35), rgba(0,229,255,.35));
+	filter: blur(18px);
+	opacity: .35;
+	pointer-events: none;
+}
+.dnf-card:hover { transform: translateY(-3px); box-shadow: 0 22px 48px rgba(0,0,0,.5); }
+.dnf-card img { width: 100%; height: 140px; object-fit: cover; }
+.dnf-card .body { padding: 12px; color: #d7e3ff; }
+.badge-type {
+	display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 11px;
+	border: 1px solid rgba(255,255,255,.16);
+	background: rgba(255,255,255,.06);
+	margin-right: 6px;
+}
+.status {
+	font-size: 12px; color: #9db0d8;
+}
+.dnf-actions { display: flex; gap: 8px; }
+.btn-gamer {
+	display: inline-block; border: 0; padding: 8px 12px; border-radius: 10px; font-weight: 600;
+	background: linear-gradient(90deg, var(--violet), var(--cyan));
+	color: white;
+	box-shadow: 0 10px 24px rgba(138,43,226,.35);
+}
+.btn-gamer-outline {
+	color: #cfe1ff; border: 1px solid rgba(255,255,255,.18); background: transparent; border-radius: 10px; padding: 8px 12px;
+}
+.mini-chart {
+	height: 6px; width: 100%;
+	background: linear-gradient(90deg, rgba(138,43,226,.4), rgba(0,229,255,.4));
+	border-radius: 999px;
+}
+
+/* ================================
+   MARKETPLACE SECTION
+================================ */
+.marketplace-section{
+	background:
+		radial-gradient(1100px 500px at 0% 0%, rgba(138,43,226,.14), transparent 60%),
+		radial-gradient(900px 450px at 100% 20%, rgba(0,229,255,.14), transparent 60%),
+		linear-gradient(180deg, #0f1117, #0b0f15);
+	border: 1px solid rgba(255,255,255,.10);
+	border-radius: 16px;
+	box-shadow: 0 24px 60px rgba(0,0,0,.45);
+}
+.market-header{
+	display:flex;align-items:center;justify-content:space-between;gap:10px;
+	color:#e7ebff;
+	text-shadow:0 0 18px rgba(138,43,226,.25),0 0 10px rgba(0,229,255,.2);
+}
+.market-filters{
+	display:flex;flex-wrap:wrap;gap:8px;
+}
+.chip{
+	font-size:12px;padding:6px 10px;border-radius:999px;color:#cfe1ff;
+	background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);
+}
+.market-grid{
+	display:grid;gap:16px;
+	grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+}
+.market-layout{display:grid;grid-template-columns:1fr 320px;gap:16px;}
+@media (max-width: 1100px){.market-layout{grid-template-columns:1fr;} .market-aside{order:-1;}}
+.market-aside{
+	background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+	border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:12px;
+}
+.top-list{list-style:decimal-leading-zero;padding-left:18px;margin:0;}
+.top-item{display:grid;grid-template-columns:54px 1fr auto;gap:10px;align-items:center;padding:8px;border-radius:10px;}
+.top-item:hover{background:rgba(255,255,255,.06);}
+.top-thumb{width:54px;height:40px;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,.12);}
+.top-info .title{font-weight:700;}
+.top-info .meta{font-size:12px;color:#9db0d8;}
+.market-banner{
+	margin-top:10px;border:1px dashed rgba(255,255,255,.2);border-radius:12px;padding:12px;
+	background:radial-gradient(400px 200px at 20% 0%, rgba(138,43,226,.25), transparent 60%), radial-gradient(400px 200px at 90% 40%, rgba(0,229,255,.25), transparent 60%);
+	text-align:center;
+}
+.banner-price{font-size:24px;font-weight:800;color:#fff;text-shadow:0 0 18px rgba(0,229,255,.35);}
+.market-card{
+	position:relative;overflow:hidden;border-radius:14px;
+	border:1px solid rgba(255,255,255,.12);
+	background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+	box-shadow:0 16px 36px rgba(0,0,0,.35);
+	transition:transform .2s ease, box-shadow .3s ease;
+}
+.market-card::before{
+	content:'';position:absolute;inset:-1px;border-radius:16px;
+	background:linear-gradient(90deg, rgba(138,43,226,.35), rgba(0,229,255,.35));
+	filter:blur(18px);opacity:.35;pointer-events:none;
+}
+.market-card:hover{transform:translateY(-3px);box-shadow:0 22px 48px rgba(0,0,0,.5);}
+.market-thumb{width:100%;height:160px;object-fit:cover;display:block;}
+.market-body{padding:12px;color:#d7e3ff;}
+.market-title{font-weight:700;margin:0 0 6px;}
+.market-meta{display:flex;justify-content:space-between;color:#9db0d8;font-size:12px;margin-bottom:8px;}
+.market-actions{display:flex;gap:8px;align-items:center;justify-content:space-between;}
+.badge-green{background:rgba(0,255,170,.12);border:1px solid rgba(0,255,170,.35);color:#b9ffe6;padding:4px 8px;border-radius:999px;font-size:11px;}
+.price{
+	background:linear-gradient(90deg, #8A2BE2, #00E5FF);
+	color:#fff;border-radius:10px;padding:8px 12px;font-weight:700;min-width:86px;text-align:center;
+	box-shadow:0 10px 24px rgba(138,43,226,.35);
+}
+
+
